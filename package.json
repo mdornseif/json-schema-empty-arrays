@@ -60,6 +60,8 @@
   "scripts": {
     "analyze": "size-limit --why",
     "build": "dts build",
+    "doc:build": "npx typedoc@0.23  --skipErrorChecking  src/index.ts",
+    "doc:publish": "npx gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "lint": "dts lint",
     "prepare": "husky install",
     "release": "npx standard-version",
