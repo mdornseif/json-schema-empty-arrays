@@ -1,6 +1,7 @@
 {
   "author": "Dr. Maximillian Dornseif",
   "dependencies": {
+    "@json-schema-tools/traverse": "^1.10.1",
     "json-schema": "^0.4.0",
     "json-schema-traverse": "^1.0.0"
   },

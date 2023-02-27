@@ -5,10 +5,9 @@
  * Copyright (c) 2021 Dr. Maximillian Dornseif
  */
 
-import test from 'ava';
-import { JSONSchema7 } from 'json-schema';
+import { JSONSchema7 } from 'json-schema'
 
-import { jsonEmptyArrays } from './json-schema-empty-arrays';
+import { jsonEmptyArrays } from '../src/lib/json-schema-empty-arrays'
 
 const schema: JSONSchema7 = {
   $id: 'https://huwawi3.hudora.de/schemata/H3Test',
@@ -31,10 +30,13 @@ const schema: JSONSchema7 = {
       },
     },
   },
-};
+}
 
-test('handles simple schema', (t) => {
-  t.deepEqual(jsonEmptyArrays(schema), {
-    sub: [],
-  });
-});
+test('handles simple schema', () => {
+  const template = jsonEmptyArrays(schema)
+  expect(template).toMatchInlineSnapshot(`
+    Object {
+      "sub": Array [],
+    }
+  `)
+})

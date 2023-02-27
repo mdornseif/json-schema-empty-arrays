@@ -1,6 +1,10 @@
 {
   "extends": "@tsconfig/recommended/tsconfig.json",
-  "include": ["src", "types"],
+  "include": [
+    "src",
+    "types",
+    "test/json-schema-empty-arrays.test.ts"
+  ],
   "compilerOptions": {
     "module": "esnext",
   }

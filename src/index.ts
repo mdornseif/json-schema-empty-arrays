@@ -1,1 +1,1 @@
-export * from './lib/json-schema-empty-arrays';
+export * from './lib/json-schema-empty-arrays'
