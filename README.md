@@ -16,6 +16,7 @@ The output can easily [merged](https://www.npmjs.com/package/lodash.merge) with 
 import { jsonEmptyArrays } from 'json-schema-empty-arrays';
 import merge from 'lodash.merge';
 
+// carve! merge polbaby handles arrays differently than you think
 const finalData = merge({}, jsonEmptyArrays(schema), inputData);
 ```
 

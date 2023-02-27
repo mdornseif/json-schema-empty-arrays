@@ -7,3 +7,4 @@ dist
 storybook-static/coverage
 coverage/
 storybook-static/
+docs
