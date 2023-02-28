@@ -1,37 +1,35 @@
 {
+  "name": "json-schema-empty-arrays",
+  "version": "0.1.0",
+  "description": "Generate empty arrays for all JSON-Schema array properties.",
+  "homepage": "https://mdornseif.github.io/json-schema-empty-arrays/",
+  "repository": "git@github.com:mdornseif/json-schema-empty-arrays.git",
+  "license": "MIT",
   "author": "Dr. Maximillian Dornseif",
-  "dependencies": {
-    "@json-schema-tools/traverse": "^1.10.1",
-    "json-schema": "^0.4.0",
-    "json-schema-traverse": "^1.0.0"
-  },
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "^8.2.4",
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/node": "^18.14.2",
-    "dts-cli": "^1.6.3",
-    "husky": "^8.0.3",
-    "size-limit": "^8.2.4",
-    "tslib": "^2.5.0",
-    "typescript": "^4.9.5"
-  },
-  "engines": {
-    "node": ">=12"
-  },
+  "main": "dist/index.js",
+  "module": "dist/json-schema-empty-arrays.esm.js",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
-  "homepage": "https://github.com/mdornseif/json-schema-empty-arrays",
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "dts build",
+    "doc:build": "npx typedoc@0.23  --skipErrorChecking  src/index.ts",
+    "doc:publish": "npx gh-pages -m \"[ci skip] Updates\" -d docs",
+    "lint": "dts lint",
+    "prepare": "husky install",
+    "release": "npx standard-version",
+    "size": "size-limit",
+    "start": "dts watch",
+    "test": "TZ=utc dts test --passWithNoTests"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "dts lint"
     }
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "license": "MIT",
   "lint-staged": {
     "*{css,scss,md,markdown,json,yaml,yml,graphql,html}": "prettier -w",
     "*{js,jsx,ts,tsx}": [
@@ -40,10 +38,6 @@
     ],
     "package.json": "sort-package-json"
   },
-  "main": "dist/index.js",
-  "module": "dist/json-schema-empty-arrays.esm.js",
-  "name": "json-schema-empty-arrays",
-  "peerDependencies": {},
   "prettier": {
     "printWidth": 110,
     "semi": false,
@@ -56,18 +50,28 @@
       "next"
     ]
   },
-  "repository": "git@github.com:mdornseif/json-schema-empty-arrays.git",
-  "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
-    "doc:build": "npx typedoc@0.23  --skipErrorChecking  src/index.ts",
-    "doc:publish": "npx gh-pages -m \"[ci skip] Updates\" -d build/docs",
-    "lint": "dts lint",
-    "prepare": "husky install",
-    "release": "npx standard-version",
-    "size": "size-limit",
-    "start": "dts watch",
-    "test": "TZ=utc dts test --passWithNoTests"
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "@json-schema-tools/traverse": "^1.10.1",
+    "json-schema": "^0.4.0",
+    "json-schema-traverse": "^1.0.0"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/node": "^18.14.2",
+    "dts-cli": "^1.6.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "size-limit": "^8.2.4",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=12"
   },
   "size-limit": [
     {
@@ -78,7 +82,5 @@
       "limit": "10 KB",
       "path": "dist/json-schema-empty-arrays.esm.js"
     }
-  ],
-  "typings": "dist/index.d.ts",
-  "version": "0.1.0"
+  ]
 }

@@ -13,11 +13,11 @@ For a given schema `jsonEmptyArrays()` generates an object containing `[]` for a
 The output can easily [merged](https://www.npmjs.com/package/lodash.merge) with your existing data to get empty strings instead of missing properties.
 
 ```js
-import { jsonEmptyArrays } from 'json-schema-empty-arrays';
-import merge from 'lodash.merge';
+import { jsonEmptyArrays } from 'json-schema-empty-arrays'
+import merge from 'lodash.merge'
 
 // carve! merge polbaby handles arrays differently than you think
-const finalData = merge({}, jsonEmptyArrays(schema), inputData);
+const finalData = merge({}, jsonEmptyArrays(schema), inputData)
 ```
 
 # See also:
@@ -25,3 +25,4 @@ const finalData = merge({}, jsonEmptyArrays(schema), inputData);
 - [json-schema-empty-strings](https://www.npmjs.com/package/json-schema-empty-strings)
 - [json-schema-default](https://www.npmjs.com/package/json-schema-default)
 - [json-schema-empty](https://www.npmjs.com/package/json-schema-empty)
+- [json-schema-prepare-data-for-form](https://www.npmjs.com/package/json-schema-prepare-data-for-form)
